@@ -7,8 +7,6 @@ def expression(s,sp,ep):
     l=len(s)
     arr=[]
     d=(ep-sp)/100
-    print("now= ",d)
-    print(sp,ep)
     for i in range(101):
         try:
             n=sp+(i*d)
