@@ -62,7 +62,7 @@ def graph_plot(s):
                         running=False
                     elif event.key==K_SPACE:
                         d+=1
-                        txw-=3
+                        if(txw>3):txw-=3
                         upb=midy+(10*d)
                         lwb=midy+((-10)*d)
                         rtb=midx+(10*d)
