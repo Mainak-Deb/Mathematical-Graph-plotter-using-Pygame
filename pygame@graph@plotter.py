@@ -1,6 +1,7 @@
 from math import *
 import pygame,sys
 from pygame.locals import *
+from tkinter import *
 
 def expression(s,sp,ep):
     s=s.split("x")
@@ -147,6 +148,21 @@ def graph_plot(s):
   
         
         pygame.display.update()
+        
+wd=Tk()
+wd.title("Number to word converter")
+wd.configure(background="black")
+e=Entry(wd,width=50,borderwidth=5,bg="black",fg="yellow")
+e.grid(row=1,column=0)
+def do():
+    p=e.get()
+    s=str(p)
+    wd.destroy()
+    graph_plot(s)
+lb3=Label(wd,text="Graph Plot",padx=110,pady=10,bg="grey").grid(row=3,column=0)
+lb1=Label(wd,text="Enter f(x)",padx=110,pady=10,bg="grey").grid(row=0,column=0)
+button=Button(wd,text="CONVERT",padx=80,pady=5,bg="silver",command=do).grid(row=2,column=0)
 
-s=input("Enter a equation:\ny=")
-graph_plot(s)
+
+mainloop()
+
